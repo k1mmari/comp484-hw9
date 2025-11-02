@@ -15,31 +15,83 @@ Calculate the final result of the following expression, making sure to use `came
 $3 + 5 * (10 / 2) - (8 - 4)$.
 Output the result using `console.log()`.
 
+let answer = 3 + 5 * (10 / 2) - (8 - 4);
+console.log(answer);
+24
+
 **Exercise 2: Case Sensitivity Test**
 Declare a variable named `projectIdentifier` and assign it the string value "COMP484". On the next line, attempt to reassign its value to "JS_Advanced" using an incorrect casing (e.g., `ProjectIdentifier`). Use a comment to explain why this reassignment attempt fails based on JavaScript's rules. Finally, correctly reassign and log the correct final value.
+
+let projectIdentifier = "COMP484";
+ProjectIdentifier = "JS_Advanced"; // bc JS is case-sensetive
+
+projectIdentifier = "JS_Adnanced";
+console.log(projectIdentifier);
+
 
 **Exercise 3: String Quoting Challenge**
 Declare a variable named `courseDescription` using `var` and `camelCase`. Assign it the string value: `The course is "interactive" and involves 'scripting' logic.` Define the string using double quotes, and ensure no escaping is required by using single quotes internally for the word 'scripting'.
 
+let courseDescription = "The course is \"interactive"\ and involves 'scripting' logic.";
+console.log(courseDescription);
+
 **Exercise 4: Escaping and Console Output**
 Declare a variable named `errorMessage` and assign it a string defined using single quotes. The string content must be: `An internal server error occurred: "Access Denied"`. Use the backslash escape character to properly include the double quotes within the single-quoted string definition. Log the `errorMessage` variable.
 
+let errorMessage = 'An internal server error occurred: \"Access Denied"\';
+console.log(errorMessage);
+
 **Exercise 5: Type Coercion with Non-Plus Operators**
 Set `valueA` to the number 10 and `valueB` to the string "4". Calculate `resultSubtraction` using the subtraction operator (`-`) and `resultMultiplication` using the multiplication operator (`*`). Log the final values and use the `typeof` operator in separate console logs to demonstrate that JavaScript coerces `valueB` into a numeric type for these operations.
+
+let valueA = 10;
+let valueB = "4";
+let resultSubtraction = valueA - valueB;
+let resultMultiplication = valueA * valueB;
+console.log(resultSubtraction, resultMultiplication);
+console.log(typeof(resultSubtraction), typeof(resultMultiplication));
 
 ### Set 2: Operators and Type Theory
 
 **Exercise 6: Understanding `null` and `undefined` Types**
 Declare a variable `unassignedVar` without giving it a value. Declare a second variable `explicitNull` and set its value explicitly to `null`. Log the results of `typeof unassignedVar` and `typeof explicitNull`. Explain in a multi-line comment why the `typeof` operator returns "object" for `null`.
 
+let unassignedVar;
+let explicitNull = null;
+console.log(typeof(unassignedVar), typeof(explicitNull));
+
+// historical bug from earlier JS
+// bc it stored values as binary tags
+// the tag for object was 0, and null also has the same tag
+
 **Exercise 7: Boolean Assignment and Type Identification**
 Declare a variable `isBlocking` and assign it the boolean value `true`. Then, reassign `isBlocking` to the string value "true" (with quotes). Use `console.log(typeof isBlocking)` after each assignment to demonstrate how JavaScript variables are weakly typed and hold typed values.
+
+let isBlocking = 'true';
+console.log(typeof(isBlocking)); // boolean
+
+isBlocking = "true";
+console.log(typeof(isBlocking)); // string
+
 
 **Exercise 8: Invalid Variable Naming**
 Write three attempted variable declarations that would violate JavaScript's naming rules (e.g., starting with a number, using a space, or using symbols not allowed). Comment out these three lines, and next to each one, provide an explanation for why the declaration fails.
 
+let 1kmp = "Hello"; // can't start with a digit
+
+let 1 kmp = "Hello"; // can't have a space
+
+let 1@kmp = "Hello"; // can't have special characters
+
 **Exercise 9: Chained Shorthand Arithmetic**
 Initialize a variable `counterValue` to 50. In a single sequence of statements, first use the shorthand division assignment operator (`/=`) to divide the value by 5, and then use the shorthand subtraction assignment operator (`-=`) to subtract 3 from the result. Log the final `counterValue`.
+
+let counterValue = 50;
+counterValue /= 5;
+counterValue -=3;
+console.log(counterValue);
+
+// 3
 
 **Exercise 10: Prefix vs. Postfix Unary Operators**
 Initialize a variable `x` to 10.
